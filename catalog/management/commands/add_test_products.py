@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from catalog.models import Category, Products
 
+
 class Command(BaseCommand):
     help = 'Add test products to the database'
 
@@ -12,8 +13,10 @@ class Command(BaseCommand):
         category, _ = Category.objects.get_or_create(name='Ягоды', description='.')
 
         products = [
-            {'name': 'Брусника', 'category': category, 'price': 80},
-            {'name': 'Малина', 'category': category, 'price': 30},
+            {'name': 'Брусника', 'category': category, 'price': 80, 'created_at': '2025-09-08',
+             'updated_at': '2025-09-08'},
+            {'name': 'Малина', 'category': category, 'price': 30, 'created_at': '2025-09-08',
+             'updated_at': '2025-09-08'},
         ]
 
         for product in products:
